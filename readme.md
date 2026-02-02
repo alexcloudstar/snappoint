@@ -1,6 +1,7 @@
 # SnapPoint 🛠️
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/alexcloudstar?style=social)](https://x.com/alexcloudstar)
+[![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
 
 **Make your system snap back into alignment.**
 
@@ -62,6 +63,14 @@ This is **Open Source** because no one person knows where every single dev tool 
 1. **The Goal:** Does this tool solve a pain you have? Does it make system setup easier?
 2. **Fork & Code:** We're building this in **Go** for that sweet TUI performance and single-binary portability.
 3. **Submit:** Help us map out more package managers, "Ghost" locations, or share your own `Snapfile`.
+
+---
+
+## ⭐ Stargazers
+
+Thank you to all our stargazers! [View all →](STARGAZERS.md)
+
+[![Stargazers](https://reporoster.com/stars/notext/alexcloudstar/snappoint)](https://github.com/alexcloudstar/snappoint/stargazers)
 
 ---
 
