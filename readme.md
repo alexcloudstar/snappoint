@@ -30,6 +30,7 @@ Your dev machine is a graveyard of "tutorial remnants." You've got:
 * **⚖️ Align:** Resolve `$PATH` conflicts. If you have multiple versions of a tool, SnapPoint lets you pick the "Source of Truth."
 * **🧹 Deep Clean:** Don't just `uninstall`. SnapPoint wipes the associated `~/.config` and `~/.cache` folders too.
 * **🩺 Doctor:** Find broken symlinks and redundant global packages that are already handled by your local project.
+* **👯 Community Profiles:** Share your "System DNA." Export your list of curated tools and configs so others can snap their system into the same professional alignment.
 
 ---
 
@@ -38,7 +39,9 @@ Your dev machine is a graveyard of "tutorial remnants." You've got:
 * [ ] **Alpha (Hunt):** Basic discovery engine to list all binaries and their managers.
 * [ ] **TUI Dashboard:** A beautiful terminal interface (built with Go/Bubble Tea) to toggle system health.
 * [ ] **The "Purge":** Intelligent uninstaller that follows "Cleanup Recipes" for popular dev tools.
-* [ ] **Sync:** Export your system state to a `Snapfile` to recreate your environment on a new Mac/Linux box.
+* [ ] **Snap Profiles (Social):** * [ ] Export your setup to a `snap.json` or `Snapfile`.
+    * [ ] **Community Gallery:** Browse and adopt setups from top devs (e.g., "The Ultimate Go Dev Profile" or "Alex's MacOS Essentials").
+* [ ] **Sync:** Recreate your environment on a new Mac/Linux box with one command.
 
 ---
 
@@ -54,11 +57,11 @@ curl -sS https://snappoint.dev/install.sh | sh
 
 ## 🤝 Contributing
 
-This is **Open Source** because no one person knows where every single dev tool hides its trash. We need your "Cleanup Recipes"!
+This is **Open Source** because no one person knows where every single dev tool hides its trash. We need your "Cleanup Recipes" and "System Profiles"!
 
-1. **Vibe Check:** Does this tool solve a pain you have?
-2. **Fork & Code:** We're building this in **Go** for that sweet TUI performance.
-3. **Submit:** Help us map out more package managers and "Ghost" locations.
+1. **The Goal:** Does this tool solve a pain you have? Does it make system setup easier?
+2. **Fork & Code:** We're building this in **Go** for that sweet TUI performance and single-binary portability.
+3. **Submit:** Help us map out more package managers, "Ghost" locations, or share your own `Snapfile`.
 
 ---
 
