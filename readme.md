@@ -2,12 +2,24 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/alexcloudstar?style=social)](https://x.com/alexcloudstar)
 [![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
+![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 
 **Make your system snap back into alignment.**
 
 `snappoint` is an open-source, interactive system auditor and package manager "manager." It finds the ghosts of old installs, traces where that stray `python` binary came from, and deep-cleans the debris left behind by Homebrew, NPM, Pip, and manual `curl` installs.
 
 If **LazyVim** is a meta-distro for your editor, **SnapPoint** is the meta-distro for your local machine.
+
+---
+
+## 💻 OS Support
+
+SnapPoint currently supports:
+- **macOS** (Intel & Apple Silicon)
+- **Linux** (Most distributions)
+
+*Windows support is on the roadmap!* 🚀
 
 ---
 
