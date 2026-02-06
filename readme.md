@@ -8,7 +8,6 @@
 [![CI](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml/badge.svg)](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/alexcloudstar/snappoint)](https://goreportcard.com/report/github.com/alexcloudstar/snappoint)
 ![Go Version](https://img.shields.io/github/go-mod/go-version/alexcloudstar/snappoint)
-[![codecov](https://codecov.io/gh/alexcloudstar/snappoint/branch/main/graph/badge.svg)](https://codecov.io/gh/alexcloudstar/snappoint)
 [![License](https://img.shields.io/github/license/alexcloudstar/snappoint)](LICENSE)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
