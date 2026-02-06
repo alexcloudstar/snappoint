@@ -16,15 +16,15 @@ NC='\033[0m' # No Color
 
 # Logging functions
 info() {
-    echo -e "${GREEN}[INFO]${NC} $1"
+    printf "${GREEN}[INFO]${NC} %s\n" "$1"
 }
 
 warn() {
-    echo -e "${YELLOW}[WARN]${NC} $1"
+    printf "${YELLOW}[WARN]${NC} %s\n" "$1"
 }
 
 error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+    printf "${RED}[ERROR]${NC} %s\n" "$1"
     exit 1
 }
 
