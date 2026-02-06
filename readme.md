@@ -81,7 +81,7 @@ Your dev machine is a graveyard of "tutorial remnants." You've got:
 ### Quick Install
 
 ```bash
-curl -sS https://raw.githubusercontent.com/alexcloudstar/snappoint/main/scripts/install.sh | sh
+curl -sS https://snappoint.dev/install.sh | sh
 ```
 
 ### Manual Install

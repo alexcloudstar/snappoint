@@ -2,7 +2,7 @@
 set -e
 
 # SnapPoint CLI Installation Script
-# Usage: curl -sS https://raw.githubusercontent.com/alexcloudstar/snappoint/main/scripts/install.sh | sh
+# Usage: curl -sS https://snappoint.dev/install.sh | sh
 
 REPO="alexcloudstar/snappoint"
 INSTALL_DIR="/usr/local/bin"
