@@ -1,4 +1,4 @@
-.PHONY: init build cross-compile test test-integration lint install clean
+.PHONY: init build cross-compile test test-coverage test-integration lint install clean
 
 BINARY_NAME=snappoint
 BUILD_DIR=build
@@ -26,8 +26,12 @@ cross-compile:
 
 test:
 	@echo "Running unit tests..."
-	go test -v -race -coverprofile=coverage.out ./...
-	go tool cover -func=coverage.out
+	go test -v -race ./...
+
+test-coverage:
+	@echo "Running tests with coverage..."
+	go test -coverprofile=coverage.out ./...
+	go tool cover -func=coverage.out | tail -n 1
 
 test-integration:
 	@echo "Running integration tests..."
@@ -48,4 +52,5 @@ clean:
 	@echo "Cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
 	@rm -f coverage.out
+	@rm -f *.test
 	@echo "Clean complete."
