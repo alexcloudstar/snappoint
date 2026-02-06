@@ -2,9 +2,14 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/alexcloudstar?style=social)](https://x.com/alexcloudstar)
 [![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
+[![Release](https://img.shields.io/github/v/release/alexcloudstar/snappoint-cli)](https://github.com/alexcloudstar/snappoint-cli/releases/latest)
+[![CI](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml/badge.svg)](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/alexcloudstar/snappoint-cli)](https://goreportcard.com/report/github.com/alexcloudstar/snappoint-cli)
+![Go Version](https://img.shields.io/github/go-mod/go-version/alexcloudstar/snappoint-cli)
+[![codecov](https://codecov.io/gh/alexcloudstar/snappoint-cli/branch/main/graph/badge.svg)](https://codecov.io/gh/alexcloudstar/snappoint-cli)
+[![License](https://img.shields.io/github/license/alexcloudstar/snappoint-cli)](LICENSE)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-[![CI](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml/badge.svg)](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml)
 
 **Make your system snap back into alignment.**
 
