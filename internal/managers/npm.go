@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/alexcloudstar/snappoint-cli/internal/scanner"
-	"github.com/alexcloudstar/snappoint-cli/pkg/system"
+	"github.com/alexcloudstar/snappoint/internal/scanner"
+	"github.com/alexcloudstar/snappoint/pkg/system"
 )
 
 // NPM implements the PackageManager interface for NPM

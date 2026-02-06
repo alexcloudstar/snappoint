@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alexcloudstar/snappoint-cli/pkg/version"
+	"github.com/alexcloudstar/snappoint/pkg/version"
 	"github.com/spf13/cobra"
 )
 

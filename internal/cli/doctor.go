@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/alexcloudstar/snappoint-cli/internal/managers"
-	"github.com/alexcloudstar/snappoint-cli/pkg/system"
+	"github.com/alexcloudstar/snappoint/internal/managers"
+	"github.com/alexcloudstar/snappoint/pkg/system"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )

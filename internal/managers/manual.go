@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/alexcloudstar/snappoint-cli/internal/scanner"
-	"github.com/alexcloudstar/snappoint-cli/pkg/system"
+	"github.com/alexcloudstar/snappoint/internal/scanner"
+	"github.com/alexcloudstar/snappoint/pkg/system"
 )
 
 // Manual implements the PackageManager interface for detecting ghost binaries

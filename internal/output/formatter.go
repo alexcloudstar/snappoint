@@ -1,7 +1,7 @@
 package output
 
 import (
-	"github.com/alexcloudstar/snappoint-cli/internal/scanner"
+	"github.com/alexcloudstar/snappoint/internal/scanner"
 )
 
 // Formatter defines the interface for output formatting

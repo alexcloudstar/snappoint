@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alexcloudstar/snappoint-cli/internal/scanner"
+	"github.com/alexcloudstar/snappoint/internal/scanner"
 	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
 )

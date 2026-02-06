@@ -3,7 +3,7 @@
 BINARY_NAME=snappoint
 BUILD_DIR=build
 VERSION?=$(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
-LDFLAGS=-ldflags "-X github.com/alexcloudstar/snappoint-cli/pkg/version.Version=$(VERSION)"
+LDFLAGS=-ldflags "-X github.com/alexcloudstar/snappoint/pkg/version.Version=$(VERSION)"
 
 init:
 	@echo "Initializing Go module..."

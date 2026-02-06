@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/alexcloudstar/snappoint-cli/internal/managers"
-	"github.com/alexcloudstar/snappoint-cli/internal/output"
-	"github.com/alexcloudstar/snappoint-cli/internal/scanner"
-	"github.com/alexcloudstar/snappoint-cli/pkg/system"
+	"github.com/alexcloudstar/snappoint/internal/managers"
+	"github.com/alexcloudstar/snappoint/internal/output"
+	"github.com/alexcloudstar/snappoint/internal/scanner"
+	"github.com/alexcloudstar/snappoint/pkg/system"
 	"github.com/spf13/cobra"
 )
 

@@ -1,4 +1,4 @@
-module github.com/alexcloudstar/snappoint-cli
+module github.com/alexcloudstar/snappoint
 
 go 1.25.7
 
