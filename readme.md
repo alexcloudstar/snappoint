@@ -2,12 +2,12 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/alexcloudstar?style=social)](https://x.com/alexcloudstar)
 [![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
-[![Release](https://img.shields.io/github/v/release/alexcloudstar/snappoint-cli)](https://github.com/alexcloudstar/snappoint-cli/releases/latest)
+[![Release](https://img.shields.io/github/v/release/alexcloudstar/snappoint)](https://github.com/alexcloudstar/snappoint/releases/latest)
 [![CI](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml/badge.svg)](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/alexcloudstar/snappoint-cli)](https://goreportcard.com/report/github.com/alexcloudstar/snappoint-cli)
-![Go Version](https://img.shields.io/github/go-mod/go-version/alexcloudstar/snappoint-cli)
-[![codecov](https://codecov.io/gh/alexcloudstar/snappoint-cli/branch/main/graph/badge.svg)](https://codecov.io/gh/alexcloudstar/snappoint-cli)
-[![License](https://img.shields.io/github/license/alexcloudstar/snappoint-cli)](LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/alexcloudstar/snappoint)](https://goreportcard.com/report/github.com/alexcloudstar/snappoint)
+![Go Version](https://img.shields.io/github/go-mod/go-version/alexcloudstar/snappoint)
+[![codecov](https://codecov.io/gh/alexcloudstar/snappoint/branch/main/graph/badge.svg)](https://codecov.io/gh/alexcloudstar/snappoint)
+[![License](https://img.shields.io/github/license/alexcloudstar/snappoint)](LICENSE)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 
@@ -81,31 +81,31 @@ Your dev machine is a graveyard of "tutorial remnants." You've got:
 ### Quick Install
 
 ```bash
-curl -sS https://raw.githubusercontent.com/alexcloudstar/snappoint-cli/main/scripts/install.sh | sh
+curl -sS https://raw.githubusercontent.com/alexcloudstar/snappoint/main/scripts/install.sh | sh
 ```
 
 ### Manual Install
 
-Download the latest binary for your platform from the [releases page](https://github.com/alexcloudstar/snappoint-cli/releases):
+Download the latest binary for your platform from the [releases page](https://github.com/alexcloudstar/snappoint/releases):
 
 ```bash
 # macOS (Apple Silicon)
-curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-darwin-arm64 -o snappoint
+curl -L https://github.com/alexcloudstar/snappoint/releases/latest/download/snappoint-darwin-arm64 -o snappoint
 chmod +x snappoint
 sudo mv snappoint /usr/local/bin/
 
 # macOS (Intel)
-curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-darwin-amd64 -o snappoint
+curl -L https://github.com/alexcloudstar/snappoint/releases/latest/download/snappoint-darwin-amd64 -o snappoint
 chmod +x snappoint
 sudo mv snappoint /usr/local/bin/
 
 # Linux (x64)
-curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-linux-amd64 -o snappoint
+curl -L https://github.com/alexcloudstar/snappoint/releases/latest/download/snappoint-linux-amd64 -o snappoint
 chmod +x snappoint
 sudo mv snappoint /usr/local/bin/
 
 # Linux (ARM)
-curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-linux-arm64 -o snappoint
+curl -L https://github.com/alexcloudstar/snappoint/releases/latest/download/snappoint-linux-arm64 -o snappoint
 chmod +x snappoint
 sudo mv snappoint /usr/local/bin/
 ```
@@ -113,8 +113,8 @@ sudo mv snappoint /usr/local/bin/
 ### Build from Source
 
 ```bash
-git clone https://github.com/alexcloudstar/snappoint-cli.git
-cd snappoint-cli
+git clone https://github.com/alexcloudstar/snappoint.git
+cd snappoint
 make build
 sudo make install
 ```
