@@ -23,6 +23,7 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: ${{ matrix.go-version }}
+        cache: false
 
     - name: Download dependencies
       run: go mod download
@@ -45,6 +46,7 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.22.x'
+        cache: false
 
     - name: Run go vet
       run: go vet ./...
@@ -69,6 +71,7 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.22.x'
+        cache: false
 
     - name: Cross compile
       run: make cross-compile
