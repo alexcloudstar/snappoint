@@ -4,6 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+[![CI](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml/badge.svg)](https://github.com/alexcloudstar/snappoint/actions/workflows/ci.yml)
 
 **Make your system snap back into alignment.**
 
