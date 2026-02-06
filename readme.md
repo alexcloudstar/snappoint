@@ -49,21 +49,130 @@ Your dev machine is a graveyard of "tutorial remnants." You've got:
 
 ## 🚀 Roadmap
 
-* [ ] **Alpha (Hunt):** Basic discovery engine to list all binaries and their managers.
-* [ ] **TUI Dashboard:** A beautiful terminal interface (built with Go/Bubble Tea) to toggle system health.
-* [ ] **The "Purge":** Intelligent uninstaller that follows "Cleanup Recipes" for popular dev tools.
-* [ ] **Snap Profiles (Social):** * [ ] Export your setup to a `snap.json` or `Snapfile`.
+* [x] **v0.1.0 - Alpha (Hunt):** Basic discovery engine to list all binaries and their managers.
+  * [x] Scan Homebrew, NPM, Pip packages
+  * [x] Identify ghost binaries
+  * [x] Detect PATH conflicts
+  * [x] CLI with scan, list, and doctor commands
+  * [x] Cross-platform binaries (macOS Intel/ARM, Linux x64/ARM)
+  * [x] Installation script
+* [ ] **v0.2.0 - TUI Dashboard:** A beautiful terminal interface (built with Go/Bubble Tea) to toggle system health.
+* [ ] **v0.3.0 - The "Purge":** Intelligent uninstaller that follows "Cleanup Recipes" for popular dev tools.
+* [ ] **v0.4.0 - Snap Profiles (Social):**
+    * [ ] Export your setup to a `snap.json` or `Snapfile`.
     * [ ] **Community Gallery:** Browse and adopt setups from top devs (e.g., "The Ultimate Go Dev Profile" or "Alex's MacOS Essentials").
-* [ ] **Sync:** Recreate your environment on a new Mac/Linux box with one command.
+* [ ] **v0.5.0 - Sync:** Recreate your environment on a new Mac/Linux box with one command.
+* [ ] **v1.0.0 - Production Ready:**
+    * [ ] Support more package managers (Cargo, Go install, RubyGems, APT, YUM, Pacman)
+    * [ ] JSON output format
+    * [ ] Configuration file support
+    * [ ] Cache management
 
 ---
 
-## 🛠️ Installation (Coming Soon)
+## 🛠️ Installation
+
+### Quick Install
 
 ```bash
-# This is the goal:
-curl -sS https://snappoint.dev/install.sh | sh
+curl -sS https://raw.githubusercontent.com/alexcloudstar/snappoint-cli/main/scripts/install.sh | sh
+```
 
+### Manual Install
+
+Download the latest binary for your platform from the [releases page](https://github.com/alexcloudstar/snappoint-cli/releases):
+
+```bash
+# macOS (Apple Silicon)
+curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-darwin-arm64 -o snappoint
+chmod +x snappoint
+sudo mv snappoint /usr/local/bin/
+
+# macOS (Intel)
+curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-darwin-amd64 -o snappoint
+chmod +x snappoint
+sudo mv snappoint /usr/local/bin/
+
+# Linux (x64)
+curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-linux-amd64 -o snappoint
+chmod +x snappoint
+sudo mv snappoint /usr/local/bin/
+
+# Linux (ARM)
+curl -L https://github.com/alexcloudstar/snappoint-cli/releases/latest/download/snappoint-linux-arm64 -o snappoint
+chmod +x snappoint
+sudo mv snappoint /usr/local/bin/
+```
+
+### Build from Source
+
+```bash
+git clone https://github.com/alexcloudstar/snappoint-cli.git
+cd snappoint-cli
+make build
+sudo make install
+```
+
+---
+
+## 📖 Usage
+
+### Check System Health
+
+```bash
+snappoint doctor
+```
+
+This command checks which package managers are available and shows your system configuration.
+
+### Scan for Binaries
+
+```bash
+# Scan all package managers
+snappoint scan
+
+# Scan specific package manager
+snappoint scan --manager homebrew
+snappoint scan --manager npm
+snappoint scan --manager pip
+```
+
+### List Binaries
+
+```bash
+# List all binaries
+snappoint list
+
+# Show only ghost binaries
+snappoint list --orphans
+
+# Show only conflicts
+snappoint list --conflicts
+```
+
+### Example Output
+
+```
+┌──────────┬────────────────────────┬─────────────┬──────────┐
+│ NAME     │ PATH                   │ MANAGER     │ VERSION  │
+├──────────┼────────────────────────┼─────────────┼──────────┤
+│ node     │ /usr/local/bin/node    │ homebrew    │ v20.11.0 │
+│ node     │ ~/.nvm/versions/...    │ 👻 ghost    │ v18.19.0 │
+│ python3  │ /usr/local/bin/python3 │ homebrew    │ 3.12.1   │
+│ aws      │ /usr/local/bin/aws     │ pip         │ 1.32.50  │
+│ random   │ /usr/local/bin/random  │ 👻 ghost    │ unknown  │
+└──────────┴────────────────────────┴─────────────┴──────────┘
+
+ℹ Total binaries found: 5
+
+⚠️  Found 1 conflicts:
+  • node: 2 versions detected
+    - /usr/local/bin/node (homebrew)
+    - ~/.nvm/versions/... (manual)
+
+👻 Found 2 ghost binaries:
+  • node: No package manager claims this (~/.nvm/versions/...)
+  • random: No package manager claims this (/usr/local/bin/random)
 ```
 
 ---
