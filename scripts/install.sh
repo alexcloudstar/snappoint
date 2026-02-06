@@ -16,15 +16,15 @@ NC='\033[0m' # No Color
 
 # Logging functions
 info() {
-    printf "${GREEN}[INFO]${NC} %s\n" "$1"
+    printf "${GREEN}[INFO]${NC} %s\n" "$1" >&2
 }
 
 warn() {
-    printf "${YELLOW}[WARN]${NC} %s\n" "$1"
+    printf "${YELLOW}[WARN]${NC} %s\n" "$1" >&2
 }
 
 error() {
-    printf "${RED}[ERROR]${NC} %s\n" "$1"
+    printf "${RED}[ERROR]${NC} %s\n" "$1" >&2
     exit 1
 }
 
