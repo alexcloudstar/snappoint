@@ -11,8 +11,8 @@ import (
 
 // Manual implements the PackageManager interface for detecting ghost binaries
 type Manual struct {
-	executor        system.CommandExecutor
-	knownBinaries   map[string]bool
+	executor      system.CommandExecutor
+	knownBinaries map[string]bool
 }
 
 // NewManual creates a new Manual package manager

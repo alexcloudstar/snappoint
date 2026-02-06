@@ -41,8 +41,8 @@ func GetCommonBinaryPaths() []string {
 	// Add macOS specific paths
 	if platform.IsDarwin() {
 		paths = append(paths,
-			"/opt/homebrew/bin",      // Apple Silicon Homebrew
-			"/usr/local/opt",          // Intel Homebrew
+			"/opt/homebrew/bin", // Apple Silicon Homebrew
+			"/usr/local/opt",    // Intel Homebrew
 		)
 	}
 

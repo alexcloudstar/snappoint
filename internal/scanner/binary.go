@@ -9,7 +9,7 @@ import (
 type Binary struct {
 	Name          string
 	Path          string
-	Manager       string   // "homebrew", "npm", "pip", "manual"
+	Manager       string // "homebrew", "npm", "pip", "manual"
 	Version       string
 	Package       string
 	ConflictsWith []*Binary
