@@ -63,16 +63,22 @@ func (n *NPM) Scan(ctx context.Context) ([]*scanner.Binary, error) {
 
 	var binaries []*scanner.Binary
 
+	// Create validator to check if binaries actually exist
+	validator := system.NewFileValidator()
+
 	for name, pkg := range data.Dependencies {
 		binaryPath := filepath.Join(binDir, name)
 
-		binaries = append(binaries, &scanner.Binary{
-			Name:    name,
-			Path:    binaryPath,
-			Manager: n.Name(),
-			Version: pkg.Version,
-			Package: name,
-		})
+		// Only add if binary exists and is executable
+		if validator.IsBinaryExecutable(binaryPath) {
+			binaries = append(binaries, &scanner.Binary{
+				Name:    name,
+				Path:    binaryPath,
+				Manager: n.Name(),
+				Version: pkg.Version,
+				Package: name,
+			})
+		}
 	}
 
 	return binaries, nil

@@ -102,13 +102,19 @@ func (h *Homebrew) getPackageInfo(ctx context.Context, packageName string) ([]*s
 		// Common binary path
 		binaryPath := filepath.Join(prefix, "bin", formula.Name)
 
-		binaries = append(binaries, &scanner.Binary{
-			Name:    formula.Name,
-			Path:    binaryPath,
-			Manager: h.Name(),
-			Version: version,
-			Package: packageName,
-		})
+		// Create validator to check if binary actually exists
+		validator := system.NewFileValidator()
+
+		// Only add if binary exists and is executable
+		if validator.IsBinaryExecutable(binaryPath) {
+			binaries = append(binaries, &scanner.Binary{
+				Name:    formula.Name,
+				Path:    binaryPath,
+				Manager: h.Name(),
+				Version: version,
+				Package: packageName,
+			})
+		}
 	}
 
 	return binaries, nil

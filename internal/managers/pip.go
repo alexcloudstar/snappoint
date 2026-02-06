@@ -111,17 +111,23 @@ func (p *Pip) getPackageBinaries(ctx context.Context, pipCmd, packageName, versi
 	// Use the package name as a potential binary name
 	binaryName := strings.ToLower(packageName)
 
+	// Create validator to check if binaries actually exist
+	validator := system.NewFileValidator()
+
 	for _, binDir := range binDirs {
 		binaryPath := filepath.Join(binDir, binaryName)
 
-		binaries = append(binaries, &scanner.Binary{
-			Name:    name,
-			Path:    binaryPath,
-			Manager: p.Name(),
-			Version: version,
-			Package: packageName,
-		})
-		break // Only add one binary per package
+		// Only add if binary exists and is executable
+		if validator.IsBinaryExecutable(binaryPath) {
+			binaries = append(binaries, &scanner.Binary{
+				Name:    name,
+				Path:    binaryPath,
+				Manager: p.Name(),
+				Version: version,
+				Package: packageName,
+			})
+			break // Only add one binary per package
+		}
 	}
 
 	return binaries, nil

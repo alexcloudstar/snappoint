@@ -60,6 +60,10 @@ func runScan(cmd *cobra.Command, args []string) error {
 
 	if err != nil {
 		fmt.Printf("Warning: %v\n", err)
+		// If result is nil due to error, create empty result
+		if result == nil {
+			result = scanner.NewScanResult()
+		}
 	}
 
 	// Now scan for manual/ghost binaries if not filtering by a specific manager
