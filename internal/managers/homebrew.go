@@ -3,6 +3,7 @@ package managers
 import (
 	"context"
 	"encoding/json"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -85,6 +86,8 @@ func (h *Homebrew) getPackageInfo(ctx context.Context, packageName string) ([]*s
 	}
 
 	var binaries []*scanner.Binary
+	validator := system.NewFileValidator()
+	prefixes := []string{"/opt/homebrew", "/usr/local"}
 
 	for _, formula := range info.Formulae {
 		version := formula.Version
@@ -92,28 +95,45 @@ func (h *Homebrew) getPackageInfo(ctx context.Context, packageName string) ([]*s
 			version = formula.Installed[0].Version
 		}
 
-		// Determine Homebrew prefix based on architecture
-		platform := system.GetPlatform()
-		prefix := "/usr/local"
-		if platform.IsARM() {
-			prefix = "/opt/homebrew"
-		}
+		for _, prefix := range prefixes {
+			// Skip prefixes whose Cellar doesn't exist
+			cellarDir := filepath.Join(prefix, "Cellar")
+			if _, err := os.Stat(cellarDir); err != nil {
+				continue
+			}
 
-		// Common binary path
-		binaryPath := filepath.Join(prefix, "bin", formula.Name)
-
-		// Create validator to check if binary actually exists
-		validator := system.NewFileValidator()
-
-		// Only add if binary exists and is executable
-		if validator.IsBinaryExecutable(binaryPath) {
-			binaries = append(binaries, &scanner.Binary{
-				Name:    formula.Name,
-				Path:    binaryPath,
-				Manager: h.Name(),
-				Version: version,
-				Package: packageName,
-			})
+			// Try to find all binaries in the Cellar bin directory
+			cellarBinDir := filepath.Join(cellarDir, formula.Name, version, "bin")
+			entries, err := os.ReadDir(cellarBinDir)
+			if err == nil && len(entries) > 0 {
+				for _, entry := range entries {
+					if entry.IsDir() {
+						continue
+					}
+					linkedPath := filepath.Join(prefix, "bin", entry.Name())
+					if validator.IsBinaryExecutable(linkedPath) {
+						binaries = append(binaries, &scanner.Binary{
+							Name:    entry.Name(),
+							Path:    linkedPath,
+							Manager: h.Name(),
+							Version: version,
+							Package: packageName,
+						})
+					}
+				}
+			} else {
+				// Fallback for library-only formulae: check prefix/bin/<formula>
+				binaryPath := filepath.Join(prefix, "bin", formula.Name)
+				if validator.IsBinaryExecutable(binaryPath) {
+					binaries = append(binaries, &scanner.Binary{
+						Name:    formula.Name,
+						Path:    binaryPath,
+						Manager: h.Name(),
+						Version: version,
+						Package: packageName,
+					})
+				}
+			}
 		}
 	}
 

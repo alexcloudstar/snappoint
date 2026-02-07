@@ -54,12 +54,12 @@ func (n *NPM) Scan(ctx context.Context) ([]*scanner.Binary, error) {
 		return nil, err
 	}
 
-	// Get global bin directory
-	binDir, err := n.executor.Execute(ctx, "npm", "bin", "-g")
+	// Get global prefix directory and derive bin path
+	prefixDir, err := n.executor.Execute(ctx, "npm", "prefix", "-g")
 	if err != nil {
 		return nil, err
 	}
-	binDir = strings.TrimSpace(binDir)
+	binDir := filepath.Join(strings.TrimSpace(prefixDir), "bin")
 
 	var binaries []*scanner.Binary
 
