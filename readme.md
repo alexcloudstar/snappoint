@@ -1,6 +1,12 @@
-# SnapPoint 🛠️
+<p align="center">
+  <img src="https://snappoint.dev/logo.svg" alt="SnapPoint" height="64" />
+</p>
 
-<a href="https://www.producthunt.com/products/snappoint?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-snappoint" target="_blank" rel="noopener noreferrer"><img alt="SnapPoint - Make Your System Snap Back Into Alignment | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1075242&amp;theme=light&amp;t=1770411245928"></a>
+<h1 align="center">SnapPoint</h1>
+
+<p align="center">
+  <a href="https://www.producthunt.com/products/snappoint?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-snappoint" target="_blank" rel="noopener noreferrer"><img alt="SnapPoint - Make Your System Snap Back Into Alignment | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1075242&amp;theme=light&amp;t=1770411245928"></a>
+</p>
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/alexcloudstar?style=social)](https://x.com/alexcloudstar)
 [![GitHub stars](https://img.shields.io/github/stars/alexcloudstar/snappoint?style=social)](https://github.com/alexcloudstar/snappoint/stargazers)
